@@ -95,30 +95,3 @@ body {
   gap: 15px;
   margin-top: 20px;
 }
-
-@media (max-width: 500px) {
-  .card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-  }
-
-  .photo img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
-  }
-
-  .info h1 {
-    font-size: 1.3rem;
-  }
-
-  .info h3 {
-    font-size: 1rem;
-  }
-
-  .links a {
-    font-size: 0.95rem;
-  }
-}
