@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mavzu saqlash</title>
+  <style>
+    body.light-mode {
+      background-color: #fff;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .toggle-btn {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Salom! Bu mavzu almashtirish misoli 😎</h1>
+  <button class="toggle-btn" id="themeToggle">Mavzuni o‘zgartirish</button>
+
+  <script>
+    // 1️⃣ LocalStorage dan mavzuni olish
+    const currentTheme = localStorage.getItem("theme");
+
+    // 2️⃣ Agar oldin saqlangan bo‘lsa, shunga mos classni bodyga qo‘shamiz
+    if (currentTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.add("light-mode");
+    }
+
+    // 3️⃣ Tugma bosilganda mavzuni o‘zgartiramiz
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      if (document.body.classList.contains("dark-mode")) {
+        document.body.classList.replace("dark-mode", "light-mode");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.body.classList.replace("light-mode", "dark-mode");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  </script>
+</body>
+</html>
